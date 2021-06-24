@@ -1,0 +1,15 @@
+export enum SocketEvent {
+  chatMessage = "chatmessage",
+  cheer = "cheer",
+  close = "close",
+  deleteChatMessage = "deletechatmessage",
+  error = "error",
+  follow = "follow",
+  open = "open",
+  raid = "raid",
+  raw = "raw",
+  specialUserJoin = "specialuserjoin",
+  sub = "sub",
+  teamMemberJoin = "teammemberjoin",
+  timer = "timer",
+}
