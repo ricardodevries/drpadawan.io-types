@@ -1,4 +1,5 @@
 export enum SocketEvent {
+  banUser = "banuser",
   chatMessage = "chatmessage",
   cheer = "cheer",
   close = "close",
