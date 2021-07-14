@@ -12,5 +12,6 @@ export enum SocketEvent {
   specialUserJoin = "specialuserjoin",
   sub = "sub",
   teamMemberJoin = "teammemberjoin",
+  timeoutUser = "timoutuser",
   timer = "timer",
 }

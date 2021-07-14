@@ -122,6 +122,15 @@ export interface BanUserPacket extends Packet {
   data: BanUserData;
 }
 
+export interface TimeoutUserData {
+  userId: string;
+}
+
+export interface TimeoutUserPacket extends Packet {
+  event: SocketEvent.timeoutUser;
+  data: TimeoutUserData;
+}
+
 export type WebSocketPacket =
   | BanUserPacket
   | ChatMessagePacket
@@ -132,4 +141,5 @@ export type WebSocketPacket =
   | SpecialUserJoinPacket
   | SubPacket
   | TeamMemberJoinPacket
+  | TimeoutUserPacket
   | TimerPacket;
