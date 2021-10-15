@@ -9,9 +9,11 @@ export enum SocketEvent {
   open = "open",
   raid = "raid",
   raw = "raw",
-  specialUserJoin = "specialuserjoin",
+  shoutOut = "shoutout",
   sub = "sub",
   teamMemberJoin = "teammemberjoin",
   timeoutUser = "timoutuser",
   timer = "timer",
+  userJoin = "userjoin",
+  userPart = "userpart",
 }

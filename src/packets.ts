@@ -16,13 +16,22 @@ export interface CheerPacket extends Packet {
   data: CheerData;
 }
 
-export interface SpecialUserJoinData {
+export interface UserJoinData {
   username: string;
 }
 
-export interface SpecialUserJoinPacket extends Packet {
-  event: SocketEvent.specialUserJoin;
-  data: SpecialUserJoinData;
+export interface UserJoinPacket extends Packet {
+  event: SocketEvent.userJoin;
+  data: UserJoinData;
+}
+
+export interface UserPartData {
+  username: string;
+}
+
+export interface UserPartPacket extends Packet {
+  event: SocketEvent.userPart;
+  data: UserPartData;
 }
 
 export interface RaidData {
@@ -132,6 +141,20 @@ export interface TimeoutUserPacket extends Packet {
   data: TimeoutUserData;
 }
 
+export interface ShoutOutData {
+  lastStream: {
+    title: string;
+    category: string;
+  };
+  logoUrl: string;
+  username: string;
+}
+
+export interface ShoutOutPacket extends Packet {
+  event: SocketEvent.shoutOut;
+  data: ShoutOutData;
+}
+
 export type WebSocketPacket =
   | BanUserPacket
   | ChatMessagePacket
@@ -139,8 +162,10 @@ export type WebSocketPacket =
   | DeletedChatMessagePacket
   | FollowPacket
   | RaidPacket
-  | SpecialUserJoinPacket
+  | ShoutOutPacket
   | SubPacket
   | TeamMemberJoinPacket
   | TimeoutUserPacket
-  | TimerPacket;
+  | TimerPacket
+  | UserJoinPacket
+  | UserPartPacket;
