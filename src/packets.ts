@@ -16,24 +16,6 @@ export interface CheerPacket extends Packet {
   data: CheerData;
 }
 
-export interface UserJoinData {
-  username: string;
-}
-
-export interface UserJoinPacket extends Packet {
-  event: SocketEvent.userJoin;
-  data: UserJoinData;
-}
-
-export interface UserPartData {
-  username: string;
-}
-
-export interface UserPartPacket extends Packet {
-  event: SocketEvent.userPart;
-  data: UserPartData;
-}
-
 export interface RaidData {
   raiderCount: number;
   raider: string;
@@ -56,15 +38,6 @@ export interface SubData {
 export interface SubPacket extends Packet {
   event: SocketEvent.sub;
   data: SubData;
-}
-
-export interface TeamMemberJoinData {
-  logoUrl: string;
-}
-
-export interface TeamMemberJoinPacket extends Packet {
-  event: SocketEvent.teamMemberJoin;
-  data: TeamMemberJoinData;
 }
 
 export interface DeletedChatMessageData {
@@ -164,8 +137,5 @@ export type WebSocketPacket =
   | RaidPacket
   | ShoutOutPacket
   | SubPacket
-  | TeamMemberJoinPacket
   | TimeoutUserPacket
-  | TimerPacket
-  | UserJoinPacket
-  | UserPartPacket;
+  | TimerPacket;

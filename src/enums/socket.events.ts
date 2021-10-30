@@ -11,9 +11,6 @@ export enum SocketEvent {
   raw = "raw",
   shoutOut = "shoutout",
   sub = "sub",
-  teamMemberJoin = "teammemberjoin",
   timeoutUser = "timoutuser",
   timer = "timer",
-  userJoin = "userjoin",
-  userPart = "userpart",
 }
