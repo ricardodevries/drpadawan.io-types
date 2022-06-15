@@ -128,14 +128,60 @@ export interface ShoutOutPacket extends Packet {
   data: ShoutOutData;
 }
 
+export interface AnnounceGiveawayData {}
+
+export interface StartGiveawayData {}
+
+export interface EndGiveawayData {}
+
+export interface DrawGiveawayData {
+  winner: string;
+  logoUrl: string;
+}
+
+export interface EnterGiveawayData {
+  username: string;
+  logoUrl: string;
+}
+
+export interface AnnounceGiveawayPacket extends Packet {
+  event: SocketEvent.announceGiveaway;
+  data: AnnounceGiveawayData;
+}
+
+export interface StartGiveawayPacket extends Packet {
+  event: SocketEvent.startGiveaway;
+  data: StartGiveawayData;
+}
+
+export interface EndGiveawayPacket extends Packet {
+  event: SocketEvent.endGiveaway;
+  data: EndGiveawayData;
+}
+
+export interface DrawGiveawayPacket extends Packet {
+  event: SocketEvent.drawGiveaway;
+  data: DrawGiveawayData;
+}
+
+export interface EnterGiveawayPacket extends Packet {
+  event: SocketEvent.enterGiveaway;
+  data: EnterGiveawayData;
+}
+
 export type WebSocketPacket =
+  | AnnounceGiveawayPacket
   | BanUserPacket
   | ChatMessagePacket
   | CheerPacket
   | DeletedChatMessagePacket
+  | DrawGiveawayPacket
+  | EndGiveawayPacket
+  | EnterGiveawayPacket
   | FollowPacket
   | RaidPacket
   | ShoutOutPacket
+  | StartGiveawayPacket
   | SubPacket
   | TimeoutUserPacket
   | TimerPacket;
